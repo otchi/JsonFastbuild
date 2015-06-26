@@ -20,7 +20,7 @@ public class JsonArrayBuilder<ParentType>
 		this.parent=(ParentType) this;
 	}
 	
-	private JsonArrayBuilder(ParentType parent){
+	public JsonArrayBuilder(ParentType parent){
 		this.jsonArray=new JsonArray();
 		this.parent=parent;
 	}
@@ -44,10 +44,6 @@ public class JsonArrayBuilder<ParentType>
 		return this.parent;
 	}
 
-
-
-
-	
 	
 	public static IStartBuildJsonArray<IRootJsonBuilder> init(){
 		
@@ -67,6 +63,13 @@ public class JsonArrayBuilder<ParentType>
 	public ParentType end() {
 		// TODO Auto-generated method stub
 		return this.parent;
+	}
+
+	public IStartBuildJsonArray<IBuildJsonArray<ParentType>> putArray() {
+		// TODO Auto-generated method stub
+		IStartBuildJsonArray<IBuildJsonArray<ParentType>> jsab=new JsonArrayBuilder<IBuildJsonArray<ParentType>>(this);
+		this.jsonArray.add(((IRootJsonBuilder)jsab).getJsonElement());
+		return jsab;
 	}
 
 }

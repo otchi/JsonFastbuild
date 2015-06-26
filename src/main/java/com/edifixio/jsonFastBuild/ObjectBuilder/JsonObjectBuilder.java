@@ -1,5 +1,7 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
+import com.edifixio.jsonFastBuild.ArrayBuilder.IStartBuildJsonArray;
+import com.edifixio.jsonFastBuild.ArrayBuilder.JsonArrayBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -7,7 +9,7 @@ public class JsonObjectBuilder<ParentType> implements IBuildJsonObject<ParentTyp
 
 	private ParentType parent;
 	private JsonObject jsonObject;
-	private String proprety;
+	private String property;
 	
 	
 	@SuppressWarnings("unchecked")
@@ -32,9 +34,9 @@ public class JsonObjectBuilder<ParentType> implements IBuildJsonObject<ParentTyp
 		return this.parent;
 	}
 
-	public IBuildJsonObject<ParentType> putPreprety(String proprety) {
+	public IBuildJsonObject<ParentType> putPreprety(String property) {
 		// TODO Auto-generated method stub
-		this.proprety=proprety;
+		this.property=property;
 		//System.out.print(((IRootJsonBuilder)parent).getJsonElement()+"\n");
 		return this;
 	}
@@ -47,7 +49,7 @@ public class JsonObjectBuilder<ParentType> implements IBuildJsonObject<ParentTyp
 	public IStartBuildJsonObject<IPutProprety<ParentType>> putObject() {
 		// TODO Auto-generated method stub
 		IStartBuildJsonObject<IPutProprety<ParentType>> jsob=new JsonObjectBuilder<IPutProprety<ParentType>>(this);
-		this.jsonObject.add(proprety, ((IRootJsonBuilder)jsob).getJsonElement());
+		this.jsonObject.add(property, ((IRootJsonBuilder)jsob).getJsonElement());
 		//System.out.print(((IRootJsonBuilder)parent).getJsonElement());
 		return ( IStartBuildJsonObject<IPutProprety<ParentType>>)jsob;
 	}
@@ -64,6 +66,32 @@ public class JsonObjectBuilder<ParentType> implements IBuildJsonObject<ParentTyp
 	public JsonElement getJsonElement() {
 		// TODO Auto-generated method stub
 		return this.jsonObject;
+	}
+	public IStartBuildJsonArray<IPutProprety<ParentType>> putArray() {
+		// TODO Auto-generated method stub
+		IStartBuildJsonArray<IPutProprety<ParentType>> jsab=new JsonArrayBuilder<IPutProprety<ParentType>>(this);
+		this.jsonObject.add(property, ((IRootJsonBuilder)jsab).getJsonElement());
+		return jsab;
+	}
+	public IPutProprety<ParentType> putValue(String value) {
+		// TODO Auto-generated method stub
+		this.jsonObject.addProperty(property, value);
+		return this;
+	}
+	public IPutProprety<ParentType> putValue(Number value) {
+		// TODO Auto-generated method stub
+		this.jsonObject.addProperty(property, value);
+		return this;
+	}
+	public IPutProprety<ParentType> putValue(Character value) {
+		// TODO Auto-generated method stub
+		this.jsonObject.addProperty(property, value);
+		return this;
+	}
+	public IPutProprety<ParentType> putValue(Boolean value) {
+		// TODO Auto-generated method stub
+		this.jsonObject.addProperty(property, value);
+		return this;
 	}
 	
 

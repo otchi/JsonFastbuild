@@ -1,5 +1,7 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
+import com.edifixio.jsonFastBuild.ArrayBuilder.JsonArrayBuilder;
+
 
 /**
  * Hello world!
@@ -24,5 +26,12 @@ public class App
     			.putPreprety("dd").putObject().emptyObject()
     		.end()
     		.getJsonElement());
+    	
+    	
+       	System.out.println(       
+       	    	JsonArrayBuilder.init().begin().putObject()
+       	    										.begin().putPreprety("cc").putObject().emptyObject()
+       	    										.end()
+       	    							.end().getJsonElement());
     }
 }

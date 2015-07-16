@@ -72,4 +72,18 @@ public class JsonArrayBuilder<ParentType>
 		return jsab;
 	}
 
+	public IBuildJsonArray<ParentType> putEmptyObject() {
+		// TODO Auto-generated method stub
+		this.putArray();
+		return this;
+	}
+
+	public IBuildJsonArray<ParentType> putEmptyArray() {
+		// TODO Auto-generated method stub
+		this.putObject();
+		return this;
+	}
+
+
+
 }

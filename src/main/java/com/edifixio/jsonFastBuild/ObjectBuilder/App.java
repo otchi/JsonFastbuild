@@ -1,7 +1,6 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
 import com.edifixio.jsonFastBuild.ArrayBuilder.JsonArrayBuilder;
-import com.google.gson.JsonObject;
 
 
 /**
@@ -12,34 +11,42 @@ public class App
 {
 	
     public static void main( String[] args )
-    {  JsonObject js=new JsonObject();
+    {  
     	System.out.println(       
     	JsonObjectBuilder.init()
     		.begin()
-    			.putPreprety("tt").putObject()
-    					.begin().putPreprety("ddf").putValue("cc")
-    						.putPreprety("df").putArray()
+    			.putObject("tt")
+    					.begin()
+    						.putPreprety("ssss", "dssfdqsfqsk")
+    						.putPreprety("kkkkkk", true)
+    						.putPreprety("df")
+    						.putArray()
     							.begin()
-    								.putObject().emptyObject()
-    								.putObject().emptyObject()
+    								.putEmptyObject()
+    								.putEmptyArray()
+    								.putEmptyObject()
+    								
     							.end()
-    						.putPreprety("cc").putObject().emptyObject()
-    						.putPreprety("dd").putObject()
+    						.putEmptyArray("ddddddjjjjjjjjjjjjjjjj")
+    						.putEmptyObject("dssd")
+    						.putObject("zzzzz")
     							.begin()
-    								.putPreprety("tt").putObject().emptyObject()
+    								.putEmptyObject("dd")
     							.end()
     					.end()
-    			.putPreprety("dd").putObject().emptyObject()
+    			.putEmptyObject("ddddd")
+    			.putEmptyObject("bbbbbbbbbvvcc")
     		.end()
     		.getJsonElement());
     	
+ 
     	
        	System.out.println(       
        	    	JsonArrayBuilder.init()
        	    	.begin().putArray().emptyArray()
        	    	.putObject()
        	    			.begin()
-       	    				.putPreprety("cc").putObject().emptyObject()
+       	    				.putEmptyObject("dd")
        	    			.end()
        	    	.end().getJsonElement());
     }

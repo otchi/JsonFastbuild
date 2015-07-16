@@ -93,6 +93,44 @@ public class JsonObjectBuilder<ParentType> implements IBuildJsonObject<ParentTyp
 		this.jsonObject.addProperty(property, value);
 		return this;
 	}
+	public IStartBuildJsonObject<IPutProprety<ParentType>> putObject(
+			String proprety) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putObject();
+	}
+	public IPutProprety<ParentType> putEmptyObject(String proprety) {
+		// TODO Auto-generated method stub
+		 this.putPreprety(proprety).putObject();
+		 return this;
+	}
+	public IPutProprety<ParentType> putPreprety(String proprety, String value) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putValue(value);
+	}
+	public IPutProprety<ParentType> putPreprety(String proprety, Number value) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putValue(value);
+	}
+	public IPutProprety<ParentType> putPreprety(String proprety, Character value) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putValue(value);
+	}
+	public IPutProprety<ParentType> putPreprety(String proprety, Boolean value) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putValue(value);
+	}
+	public IStartBuildJsonArray<IPutProprety<ParentType>> putArray(
+			String proprety) {
+		// TODO Auto-generated method stub
+		return this.putPreprety(proprety).putArray();
+	}
+	public IPutProprety<ParentType> putEmptyArray(String proprety) {
+		// TODO Auto-generated method stub
+		 this.putPreprety(proprety).putArray();
+		 return this;
+	}
+	
+	
 	
 
 

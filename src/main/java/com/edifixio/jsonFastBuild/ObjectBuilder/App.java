@@ -1,6 +1,8 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
 import com.edifixio.jsonFastBuild.ArrayBuilder.JsonArrayBuilder;
+import com.edifixio.jsonFastBuild.selector.UtilesSelector;
+import com.google.gson.JsonObject;
 
 
 /**
@@ -11,9 +13,8 @@ public class App
 {
 	
     public static void main( String[] args )
-    {  
-    	System.out.println(       
-    	JsonObjectBuilder.init()
+    {  	JsonObject jo;
+    	System.out.println(   jo=JsonObjectBuilder.init()
     		.begin()
     			.putObject("tt")
     					.begin()
@@ -38,7 +39,7 @@ public class App
     			.putEmptyObject("ddddd")
     			.putEmptyObject("bbbbbbbbbvvcc")
     		.end()
-    		.getJsonElement());
+    		.getJsonElement().getAsJsonObject());
     	
  
     	
@@ -50,5 +51,7 @@ public class App
        	    				.putEmptyObject("dd")
        	    			.end()
        	    	.end().getJsonElement());
+       	
+       	System.out.println(UtilesSelector.selection("tt::df",jo ));
     }
 }

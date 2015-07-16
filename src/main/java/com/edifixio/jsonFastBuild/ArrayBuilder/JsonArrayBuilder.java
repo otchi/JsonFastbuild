@@ -5,6 +5,7 @@ import com.edifixio.jsonFastBuild.ObjectBuilder.IStartBuildJsonObject;
 import com.edifixio.jsonFastBuild.ObjectBuilder.JsonObjectBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public class JsonArrayBuilder<ParentType> 
 									implements IRootJsonBuilder,
@@ -81,6 +82,30 @@ public class JsonArrayBuilder<ParentType>
 	public IBuildJsonArray<ParentType> putEmptyArray() {
 		// TODO Auto-generated method stub
 		this.putObject();
+		return this;
+	}
+
+	public IBuildJsonArray<ParentType> putValue(String value) {
+		// TODO Auto-generated method stub
+		this.jsonArray.add(new JsonParser().parse(value));
+		return this;
+	}
+
+	public IBuildJsonArray<ParentType> putValue(Number value) {
+		// TODO Auto-generated method stub
+		this.jsonArray.add(new JsonParser().parse(value.toString()));
+		return this;
+	}
+
+	public IBuildJsonArray<ParentType> putValue(Character value) {
+		// TODO Auto-generated method stub
+		this.jsonArray.add(new JsonParser().parse(value.toString()));
+		return this;
+	}
+
+	public IBuildJsonArray<ParentType> putValue(Boolean value) {
+		// TODO Auto-generated method stub
+		this.jsonArray.add(new JsonParser().parse(value.toString()));
 		return this;
 	}
 

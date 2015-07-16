@@ -25,6 +25,7 @@ public class App
     								.putEmptyObject()
     								.putEmptyArray()
     								.putEmptyObject()
+    								.putValue("99")
     								
     							.end()
     						.putEmptyArray("ddddddjjjjjjjjjjjjjjjj")

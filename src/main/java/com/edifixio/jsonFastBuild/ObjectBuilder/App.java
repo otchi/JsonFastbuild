@@ -1,7 +1,7 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
 import com.edifixio.jsonFastBuild.ArrayBuilder.JsonArrayBuilder;
-import com.edifixio.jsonFastBuild.selector.UtilesSelector;
+import com.edifixio.jsonFastBuild.selector.JsonHandleUtil;
 import com.google.gson.JsonObject;
 
 
@@ -52,6 +52,6 @@ public class App
        	    			.end()
        	    	.end().getJsonElement());
        	
-       	System.out.println(UtilesSelector.selection("tt::df",jo ));
+       	System.out.println(JsonHandleUtil.seletor("tt::df",jo ));
     }
 }

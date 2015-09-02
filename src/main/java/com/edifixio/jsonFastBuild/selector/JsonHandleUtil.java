@@ -15,7 +15,7 @@ import com.google.gson.JsonParser;
 
 public abstract class JsonHandleUtil {
 	
-	private static final JsonParser JP=new JsonParser();
+	public static final JsonParser JP=new JsonParser();
 
 	/***********************************************************************************/
 	public static JsonElement seletor(String selecor, JsonElement jse) {

@@ -1,6 +1,7 @@
 package com.edifixio.jsonFastBuild.ObjectBuilder;
 
 import com.edifixio.jsonFastBuild.ArrayBuilder.IStartBuildJsonArray;
+import com.google.gson.JsonElement;
 
 public interface IPutProprety<ParentType> {
 	public IBuildJsonObject<ParentType> putPreprety(String proprety);
@@ -13,4 +14,6 @@ public interface IPutProprety<ParentType> {
 	public IPutProprety<ParentType> putPreprety(String proprety,Number value);
 	public IPutProprety<ParentType> putPreprety(String proprety,Character value);
 	public IPutProprety<ParentType> putPreprety(String proprety,Boolean value);
+	public IPutProprety<ParentType> putElement(String proprety,JsonElement jsonElement);
+
 }

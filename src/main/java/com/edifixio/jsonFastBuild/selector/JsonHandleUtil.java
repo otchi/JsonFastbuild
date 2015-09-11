@@ -3,6 +3,7 @@ package com.edifixio.jsonFastBuild.selector;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -69,15 +70,27 @@ public abstract class JsonHandleUtil {
 	
 	/*************************************************************************/
 	public static JsonElement jsonFile(String path) throws IOException{
-		String stringResult="",inter;
-		BufferedReader br=new BufferedReader(
-							new FileReader(new File(path)));
 		
+		return jsonBufferedReader(new BufferedReader(
+							new FileReader(new File(path))));
+		
+	}
+	
+	
+	public static JsonElement jsonFile(File file) throws FileNotFoundException, IOException{
+		return jsonBufferedReader(new BufferedReader(
+							new FileReader(file)));
+	}
+	
+	
+	public static JsonElement jsonBufferedReader(BufferedReader br) throws IOException{
+		String stringResult="",inter;
 		while((inter=br.readLine())!=null)
 			stringResult+=inter;
 			
 		br.close();
 		return JP.parse(stringResult);
+		
 	}
 	/******************************************************************************/
 	public static JsonElement jsonString(String jsonStr) {
